@@ -7,63 +7,67 @@
 
     <!-- Title -->
     <h2 class="section-heading">
-      Sensor-to-Decision Bottleneck in Agentic Autonomy
+      Sensor-to-Decision Bottleneck in Agentic AI Robots
     </h2>
 
-    <!-- 🔥 NEW: Highlighted Intro Box -->
+    <!-- Highlighted Intro Box -->
     <div class="intro-box">
       <p>
-        Agentic AI robots increasingly couple high-rate multimodal sensing with learned perception and foundation-model reasoning, yet deployment failures arise from a <strong>sensor-to-decision bottleneck</strong>, not weak models.
-        Even with high per-frame accuracy, decisions fail when not grounded in <strong>fresh, decision-time evidence</strong>.
+        Agentic AI robots can show low per-frame latency and high perception accuracy, yet still fail when decisions are made from <strong>stale sensor evidence</strong>. In real deployment, redundant, sparse, and vibration-distorted camera/LiDAR streams consume onboard compute, create queues, and delay decision-relevant observations.
       </p>
     </div>
 
-    <!-- 🔥 Key Problems -->
+    <!-- Key Problems -->
     <!-- Item 1 -->
-<div class="highlight-item">
-  <div class="highlight-icon">
-    <svg viewBox="0 0 24 24">
-      <path d="M3 12h18M3 6h18M3 18h18"/>
-    </svg>
-  </div>
-  <div class="highlight-content">
-    <h4>Stale Decision Inputs</h4>
-    <p>Queueing delays force decisions on outdated sensor evidence despite high model accuracy.</p>
-  </div>
-</div>
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </div>
+      <div class="highlight-content">
+        <h4>Stale Decision Inputs</h4>
+        <p>
+          Accurate perception becomes unsafe when queued frames or scans reach the planner too late for the current scene.
+        </p>
+      </div>
+    </div>
 
-<!-- Item 2 -->
-<div class="highlight-item">
-  <div class="highlight-icon">
-    <svg viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9"/>
-      <path d="M12 7v5l3 3"/>
-    </svg>
-  </div>
-  <div class="highlight-content">
-    <h4>Low-Value Data Overload</h4>
-    <p>Redundant and vibration-amplified streams saturate onboard pipelines and waste compute.</p>
-  </div>
-</div>
+    <!-- Item 2 -->
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9"/>
+          <path d="M12 7v5l3 3"/>
+        </svg>
+      </div>
+      <div class="highlight-content">
+        <h4>Low-Value Stream Overload</h4>
+        <p>
+          Near-duplicate frames, sparse regions, and vibration-amplified artifacts waste compute, memory, and I/O without improving decisions.
+        </p>
+      </div>
+    </div>
 
-<!-- Item 3 -->
-<div class="highlight-item">
-  <div class="highlight-icon">
-    <svg viewBox="0 0 24 24">
-      <polyline points="4 17 10 11 13 14 20 7"/>
-    </svg>
-  </div>
-  <div class="highlight-content">
-    <h4>Delayed Informative Evidence</h4>
-    <p>High-value frames arrive too late, degrading real-time decision reliability.</p>
-  </div>
-</div>
+    <!-- Item 3 -->
+    <div class="highlight-item">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24">
+          <polyline points="4 17 10 11 13 14 20 7"/>
+        </svg>
+      </div>
+      <div class="highlight-content">
+        <h4>Delayed Critical Evidence</h4>
+        <p>
+          Safety-relevant observations such as pedestrians, vehicles, occlusions, or rough-terrain changes may arrive after the robot has already planned.
+        </p>
+      </div>
+    </div>
 
-    <!-- 🔥 Bridge -->
+    <!-- Bridge -->
     <div class="bridge-text">
       <p>
-        <strong>SenseGuard</strong> addresses this gap by treating robustness as a 
-        <strong>decision-time freshness objective</strong>, combining adaptive filtering with model-centric data curation. This design ensures decisions use the most informative, up-to-date sensory evidence rather than stale inputs.
+        <strong>Sense-Think-Act</strong> addresses this bottleneck by treating real-time robustness as a <strong>decision-time freshness objective</strong>. It adaptively drops, reduces, or fully processes camera frames and LiDAR scans using visual/geometric change, cached semantic risk cues, runtime pressure, and safety overrides, while retaining compact failure-aligned evidence for continual improvement.
       </p>
     </div>
 
@@ -82,12 +86,11 @@
     <div class="problem-intro-box">
 
       <p class="section-intro">
-        Under real-world vibration, <strong>low-value, redundant and distorted sensor streams</strong> delay critical observations. 
-        As a result, perception operates on <strong>stale inputs</strong>,leading to missed detections and unsafe decisions.
+        Under vibration, blur, noise, and uneven terrain, <strong>redundant or distorted sensor streams</strong> can delay informative evidence. The robot may then act on <strong>stale perception</strong>, causing missed detections and weaker planning reliability.
       </p>
 
       <p class="group-description">
-        The left shows failure under vibration-induced stale perception, while the right highlights improved sensing with adaptive filtering.
+        The left illustrates stale perception under challenging deployment conditions, while the right shows how adaptive stream refinement helps preserve fresher, decision-relevant sensing.
       </p>
 
     </div>
@@ -96,29 +99,32 @@
     <div class="image-pair">
 
       <!-- BEFORE -->
-     <!-- BEFORE -->
-<div class="image-card">
-  <iframe 
-    src="https://drive.google.com/file/d/1R2sQOs8LKBlH2kDEpd74cFOKFQpBsW0X/preview"
-    allow="autoplay"
-    title="Failure video">
-  </iframe>
+      <div class="image-card">
+        <iframe 
+          src="https://drive.google.com/file/d/1R2sQOs8LKBlH2kDEpd74cFOKFQpBsW0X/preview"
+          allow="autoplay"
+          title="Failure video">
+        </iframe>
 
-  <p class="image-label">Stale Perception</p>
-</div>
+        <p class="image-label">Stale Perception</p>
+      </div>
 
-<!-- AFTER -->
-<div class="image-card">
-  <img 
-    src="https://drive.google.com/thumbnail?id=1RfFGE0oFWyu_Y5CMWwD_ZAvSUXCY-Ycw&sz=w1000"
-    alt="Improved sensing"
-  />
+      <!-- AFTER -->
+      <div class="image-card">
+        <img 
+          src="https://drive.google.com/thumbnail?id=1RfFGE0oFWyu_Y5CMWwD_ZAvSUXCY-Ycw&sz=w1000"
+          alt="Adaptive sensing with fresher evidence"
+        />
 
-  <p class="image-label">Adaptive Sensing</p>
-</div>
+        <p class="image-label">Fresh Adaptive Sensing</p>
+      </div>
+
+    </div>
 
   </div>
 </section>
+
+
 
 <section id="research-questions" class="content-section">
   <div class="section-container">
@@ -131,9 +137,9 @@
       <div class="question-item">
         <div class="question-badge">1</div>
         <div class="question-content">
-          <h4>Online Autonomy</h4>
+          <h4>Decision-Time Freshness</h4>
           <p>
-            How can we maximize <strong>decision-time data freshness</strong> so fast onboard models remain effective under <strong>limited compute</strong>?
+            How can we maximize <strong>decision-time freshness</strong> under limited compute by adaptively filtering and refining camera/LiDAR streams?
           </p>
         </div>
       </div>
@@ -142,9 +148,9 @@
       <div class="question-item">
         <div class="question-badge">2</div>
         <div class="question-content">
-          <h4>Offline Improvement</h4>
+          <h4>Failure-Driven Improvement</h4>
           <p>
-            What <strong>minimal yet sufficient multimodal data</strong> should be retained to accelerate <strong>model improvement</strong> and robustness?
+            What <strong>minimal multimodal evidence</strong> should be retained to support efficient model improvement under deployment shift?
           </p>
         </div>
       </div>
