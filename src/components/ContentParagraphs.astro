@@ -8,7 +8,7 @@
 
     <!-- Intro -->
     <p class="intro-text">
-      We evaluate SenseGuard in Connected and Autonomous Vehicles (CAVs), a demanding setting with massive sensor data, strict real-time constraints, and safety-critical decisions. Solutions that succeed here generalize naturally to broader robotic systems.
+      We evaluate <em>Sense-Think-Act</em> in agentic AI robots, with Connected and Autonomous Vehicles (CAVs) as a safety-critical testbed. This setting combines high-rate camera/LiDAR streams, strict compute and memory limits, vibration-induced sensing artifacts, and real-time planning demands. Success in this domain demonstrates how freshness-driven sensor-to-decision adaptation can support broader resource-constrained robotic systems.
     </p>
 
     <!-- Cards -->
@@ -21,10 +21,9 @@
             <path d="M13 2L3 14h7l-1 8 10-12h-7z"/>
           </svg>
         </div>
-        <h3>Adaptive Sensory Filtering</h3>
+        <h3>Freshness-Driven Stream Refinement</h3>
         <p>
-          A vibration- and context-aware policy dynamically removes low-informative redundant data while preserving critical information.
-          Leveraging lightweight semantics and reinforcement learning, it maintains real-time efficiency under tight compute budgets.
+          A vibration- and context-aware admission-control policy selectively drops, reduces, or fully processes camera frames and LiDAR scans. It combines visual/geometric change, cached semantic risk cues, runtime pressure, reinforcement learning, and safety overrides to improve decision-time freshness while preserving safety-critical evidence.
         </p>
       </div>
 
@@ -37,9 +36,9 @@
             <path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/>
           </svg>
         </div>
-        <h3>Failure-Aligned Data Curation</h3>
+        <h3>Failure-Aligned Evidence Capsules</h3>
         <p>
-          Instead of logging everything, the system captures compact, high-value data when perception degrades, focusing on critical events that accelerate model improvement.
+          Instead of routine logging, <em>Sense-Think-Act</em> monitors sustained perception degradation and stores compact pre-event, during-event, and post-event multimodal evidence. These capsules focus storage on failure-relevant data for efficient continual retraining.
         </p>
       </div>
 
@@ -50,10 +49,9 @@
             <polyline points="3 17 9 11 13 15 21 7"/>
           </svg>
         </div>
-        <h3>Strong Real-World Performance</h3>
+        <h3>Real-World Freshness-to-Action Gains</h3>
         <p>
-          Achieves up to <strong>+20% accuracy</strong>, <strong>75% lower trajectory error</strong>, reduced latency,
-          and <strong>32% storage savings</strong> across benchmarks and real-world deployments.
+          Across V2X-Radar and a physical RovaX robot, <em>Sense-Think-Act</em> reduces planner update delay by up to <strong>70.5%</strong>, preserves up to <strong>99.3%</strong> of safety-critical inputs, and improves closed-loop navigation success by up to <strong>30%</strong> in real-world trials.
         </p>
       </div>
 
